@@ -1,0 +1,206 @@
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(32,28,28);
+    color: white;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+#background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    -o-filter: blur(15px);
+    filter: blur(15px);
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.bio-text {
+    margin-left: 20px;
+    margin-top: 0;
+    line-height: 10px;
+}
+
+/* For large screens (PCs) */
+@media (min-width: 768px) {
+    .phone-warning {
+        display: none;
+    }
+    .bio {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    .bio-text {
+        margin-left: 0px;
+        margin-top: 0;
+        line-height: 10px;
+    }
+}
+
+.bio-avatar {
+    position: relative;
+}
+
+#bio-status {
+    position: absolute;
+    left: 110px;
+    top: 10px;
+    font-size: 70px;
+}
+.online { color: #43b581; } /* Green */
+.idle { color: #faa61a; }   /* Yellow */
+.dnd { color: #f04747; }    /* Red */
+.offline { color: #747f8d; } /* Gray */
+
+.bio-name {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.bio-description {
+    font-size: 20px;
+}
+
+.bio-pronoun {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.bio-social {
+    font-size: 20px;
+    word-spacing: 10px;
+}
+
+a:link {
+    color: white;
+}
+  
+
+a:visited {
+    color: white;
+}
+
+.text-show {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.text-fade {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.paragraph {
+    padding-bottom: 10px;
+}
+
+.icon-list {
+    word-spacing: 14px;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #201c1c;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #201c1c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background-color: #373737;
+}
+
+.project-text {
+    margin-left: 20px;
+    margin-top: 0;
+    line-height: 20px;
+}
+
+/* For large screens (PCs) */
+@media (min-width: 768px) {
+    .project {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff20;
+        border-radius: 10px;
+        padding: 10px;
+        width: 400px;
+        margin: 20px 0;
+    }
+}
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    .project {
+        background-color: #ffffff20;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .project-text {
+        margin-left: 0px;
+        margin-top: 0;
+        line-height: 20px;
+    }
+}
+
+.project-title {
+    font-size: 20px;
+}
+
+#radio-text {
+    position: fixed;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 10px;  /* Adjust the distance from the right */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: background color with opacity */
+    color: white; /* Text color */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    text-align: right;
+}
+
+#radio-text-1 {
+    margin: 0px;
+}
+
+#radio-text-2 {
+    margin: 5px;
+    font-size: x-small;
+}
