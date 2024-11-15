@@ -3,6 +3,7 @@ let counter2 = 0;
 
 //Static
 const birthdayString = "Birthday: November 20, 2009";
+const celebrateString = "Today is my birthday! Happy birthday to me!"
 const contactmethod = "Contact me through Discord: @hito.akk1to";
 
 //Countdown
@@ -10,6 +11,8 @@ const birthdayMonth = 11;
 const birthdayDay = 20;
 const birthYear = 2009;
 const today = new Date();
+const dayoftoday = new Date().getDate;
+const monthoftoday = new Date().getMonth;
 const currentYear = today.getFullYear();
 
 var radio = null;
@@ -30,7 +33,8 @@ const nextAge = nextBirthday.getFullYear() - birthYear;
 
 //Event
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('countdown').textContent = birthdayString;
+    if (dayoftoday == birthdayDay && monthoftoday == birthdayMonth) document.getElementById('countdown').textContent = celebrateString;
+    else document.getElementById('countdown').textContent = birthdayString;
 
     //Status
     fetch('https://api.lanyard.rest/v1/users/727497287777124414')
@@ -144,10 +148,12 @@ function change() {
   setTimeout(() => {
     const countdownElement = document.getElementById('countdown');
     if (counter == 0) {
-        countdownElement.textContent = birthdayString;
+        if (dayoftoday == birthdayDay && monthoftoday == birthdayMonth) { countdownElement.textContent = celebrateString; }
+        else { countdownElement.textContent = birthdayString; }
     }
     if (counter == 1) {
-        countdownElement.textContent = `${daysUntilBirthday} days until my ${nextAge}-year-old birthday!`;
+        if (dayoftoday == birthdayDay && monthoftoday == birthdayMonth) { countdownElement.textContent = `Celebrate my birthday on my Facebook! Click the Facebook icon below!` }
+        else { countdownElement.textContent = `${daysUntilBirthday} days until my ${nextAge}-year-old birthday!`; }
     }
     document.getElementById("countdown").setAttribute("class", "text-show");
   }, 500)
