@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (dayoftoday == birthdayDay && monthoftoday == birthdayMonth) document.getElementById('countdown').textContent = celebrateString;
     else document.getElementById('countdown').textContent = birthdayString;
 
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I') || (event.ctrlKey && event.shiftKey && event.key === 'C') || (event.ctrlKey && event.key === 'U')) {
+            event.preventDefault();
+        }
+    });
+    
     //Status
     fetch('https://api.lanyard.rest/v1/users/727497287777124414')
         .then(response => response.json())
